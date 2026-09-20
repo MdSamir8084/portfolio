@@ -989,7 +989,7 @@ contactForm?.addEventListener(
         }
 
         const FORM_ENDPOINT =
-            "https://script.google.com/macros/s/AKfycbzwuaQlz0Spwi-pazXm_f4WrD6i2SYkLyHliss_WhCw7WWLwMsBCZYb-7MRLT5j1gt4/exec";
+              "https://script.google.com/macros/s/AKfycbzi-Tw3xQ5u0CwpCDHmWKxopfYxjIaLsflBrGn7sqyADiRt_exLCpQDh0MPxE2G2kCrkw/exec";
 
         submitButton.classList.add("loading");
 
