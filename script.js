@@ -963,8 +963,6 @@ messageInput?.addEventListener(
 
     }
 );
-
-
 /* =========================================================
    CONTACT FORM SUBMIT
    ========================================================= */
@@ -978,10 +976,7 @@ contactForm?.addEventListener(
         formStatus.textContent = "";
         formStatus.className = "form-status";
 
-
-        const valid =
-            validateContactForm();
-
+        const valid = validateContactForm();
 
         if (!valid) {
 
@@ -991,67 +986,46 @@ contactForm?.addEventListener(
             formStatus.classList.add("error");
 
             return;
-
         }
 
-
-        /*
-         * IMPORTANT:
-         *
-         * This frontend is ready for an email service
-         * such as Formspree / EmailJS / custom backend.
-         *
-         * Do not fake a successful email submission.
-         *
-         * Add your real endpoint here when configured.
-         */
-
-        const FORM_ENDPOINT = "";
-
-
-        if (!FORM_ENDPOINT) {
-
-            formStatus.textContent =
-                "Form validated successfully. Connect an email service to receive this message.";
-
-            formStatus.classList.add("success");
-
-            return;
-
-        }
-
+        const FORM_ENDPOINT =
+            "https://script.google.com/macros/s/AKfycbzwuaQlz0Spwi-pazXm_f4WrD6i2SYkLyHliss_WhCw7WWLwMsBCZYb-7MRLT5j1gt4/exec";
 
         submitButton.classList.add("loading");
 
-
         try {
 
-            const formData =
-                new FormData(contactForm);
+            const formData = {
 
+                name:
+                    document.getElementById("name").value.trim(),
 
-            const response =
-                await fetch(
-                    FORM_ENDPOINT,
-                    {
-                        method: "POST",
-                        body: formData,
-                        headers: {
-                            "Accept":
-                                "application/json"
-                        }
-                    }
-                );
+                email:
+                    document.getElementById("email").value.trim(),
 
+                phone:
+                    document.getElementById("phone").value.trim(),
 
-            if (!response.ok) {
+                message:
+                    document.getElementById("message").value.trim()
 
-                throw new Error(
-                    "Message could not be sent."
-                );
+            };
 
-            }
+            await fetch(
+                FORM_ENDPOINT,
+                {
+                    method: "POST",
 
+                    mode: "no-cors",
+
+                    headers: {
+                        "Content-Type":
+                            "text/plain;charset=utf-8"
+                    },
+
+                    body: JSON.stringify(formData)
+                }
+            );
 
             contactForm.reset();
 
@@ -1060,34 +1034,30 @@ contactForm?.addEventListener(
 
             clearErrors();
 
-
             formStatus.textContent =
                 "Message sent successfully!";
 
-            formStatus.classList.add(
-                "success"
-            );
-
+            formStatus.classList.add("success");
 
         } catch (error) {
+
+            console.error(error);
 
             formStatus.textContent =
                 "Something went wrong. Please try again later.";
 
-            formStatus.classList.add(
-                "error"
-            );
+            formStatus.classList.add("error");
 
         } finally {
 
-            submitButton.classList.remove(
-                "loading"
-            );
+            submitButton.classList.remove("loading");
 
         }
 
     }
 );
+
+  
 
 
 /* =========================================================
