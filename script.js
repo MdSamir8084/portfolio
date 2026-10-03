@@ -579,13 +579,13 @@ const projects = [
     {
         number: "01",
         icon: "fa-solid fa-cloud",
-        title: "AWS Cloud Project",
+        title: "cloud student portal & Document Management System",
         description:
-            "A cloud-focused project demonstrating AWS infrastructure, deployment and practical cloud concepts.",
+            "An end-to-end AWS cloud project demonstrating application deployment, containerization, CI/CD, cloud storage, database integration, load balancing and auto scaling.",
         technologies:
-            ["AWS", "Linux", "Git", "EC2"],
-        github: "#",
-        live: "#"
+            ["AWS", "Linux", "Security Group", "EC2", "S3", "RDS", "Docker", "IAM", "VPC", "Load Balancer", "Auto Scaling", "github", "CICD", "All Configuration"],
+        github: "https://github.com/MdSamir8084/clouddocumentmanage",
+        "Project Details": "https://github.com/MdSamir8084/clouddocumentmanage/blob/main/documentation/cloud-student-portal-complete-documentation.md"
     },
 
 
@@ -598,7 +598,7 @@ const projects = [
         technologies:
             ["Linux", "Shell", "Networking"],
         github: "#",
-        live: "#"
+        "live": "#"
     },
 
 
