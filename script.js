@@ -585,7 +585,7 @@ const projects = [
         technologies:
             ["AWS", "Linux", "Security Group", "EC2", "S3", "RDS", "Docker", "IAM", "VPC", "Load Balancer", "Auto Scaling", "github", "CICD", "All Configuration"],
         github: "https://github.com/MdSamir8084/clouddocumentmanage",
-        "Project Details": "https://github.com/MdSamir8084/clouddocumentmanage/blob/main/documentation/cloud-student-portal-complete-documentation.md"
+        "Project Details":"https://github.com/MdSamir8084/clouddocumentmanage/blob/main/documentation/cloud-student-portal-complete-documentation.md"
     },
 
 
@@ -686,26 +686,40 @@ function renderProjects() {
 
             <div class="project-links">
 
-                <a
-                    href="${project.github}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <i class="fa-brands fa-github"></i>
-                    GitHub
-                </a>
+    <a
+        href="${project.github}"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        <i class="fa-brands fa-github"></i>
+        GitHub
+    </a>
 
+    ${
+        project.live
+        ? `
+            <a
+                href="${project.live}"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                Live Demo
+            </a>
+        `
+        : `
+            <a
+                href="${project.projectDetails}"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <i class="fa-solid fa-file-lines"></i>
+                Project Details
+            </a>
+        `
+    }
 
-                <a
-                    href="${project.live}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    Live Demo
-                </a>
-
-            </div>
+</div>
 
         `;
 
