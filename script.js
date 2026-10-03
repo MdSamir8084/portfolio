@@ -585,7 +585,7 @@ const projects = [
         technologies:
             ["AWS", "Linux", "Security Group", "EC2", "S3", "RDS", "Docker", "IAM", "VPC", "Load Balancer", "Auto Scaling", "github", "CICD", "All Configuration"],
         github: "https://github.com/MdSamir8084/clouddocumentmanage",
-        "Project Details":"projectDetails:"https://github.com/MdSamir8084/clouddocumentmanage/blob/main/documentation/cloud-student-portal-complete-documentation.md"
+        ProjectDetails:"https://github.com/MdSamir8084/clouddocumentmanage/blob/main/documentation/cloud-student-portal-complete-documentation.md"
     },
 
 
